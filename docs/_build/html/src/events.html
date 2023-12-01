@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>events module &#8212; pepe 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pepe 1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">events module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-events">
+<span id="events-module"></span><h1>events module<a class="headerlink" href="#module-events" title="Permalink to this headline">¶</a></h1>
+<p>Fichero de eventos generales</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="events.Eventos">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">events.</span></span><span class="sig-name descname"><span class="pre">Eventos</span></span><a class="reference internal" href="../_modules/events.html#Eventos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.Abrir">
+<span class="sig-name descname"><span class="pre">Abrir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.Abrir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.Abrir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que abre la ventana del explorador de archivos.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.Autor">
+<span class="sig-name descname"><span class="pre">Autor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.Autor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.Autor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que establece un autor para los informes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.Backup">
+<span class="sig-name descname"><span class="pre">Backup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.Backup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.Backup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que realiza una copia de seguridad de la BD en formato zip</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.Contacto">
+<span class="sig-name descname"><span class="pre">Contacto</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.Contacto"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.Contacto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que establece un contacto para los informes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.ExportarDatos">
+<span class="sig-name descname"><span class="pre">ExportarDatos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.ExportarDatos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.ExportarDatos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que crea un fichero excel con los datos de todos los clientes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.ImportarDatos">
+<span class="sig-name descname"><span class="pre">ImportarDatos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.ImportarDatos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.ImportarDatos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que actualiza/crea clientes a partir de un fichero excel y llama al método cargarTabCli
+para que recarge la tabla clientes de la interfaz</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.Imprimir">
+<span class="sig-name descname"><span class="pre">Imprimir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.Imprimir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.Imprimir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que abre la ventana de impresión para conectarte con impresoras</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.Restaurar">
+<span class="sig-name descname"><span class="pre">Restaurar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.Restaurar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.Restaurar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que restaura la BD a partir de una copia de seguridad en formato zip</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.Salida">
+<span class="sig-name descname"><span class="pre">Salida</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.Salida"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.Salida" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que muestra la ventana para salir del programa y en función de lo que se quiera hacer,
+cierra la aplicación o esconde la ventana de salir.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.Version">
+<span class="sig-name descname"><span class="pre">Version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.Version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.Version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que establece una versión del programa para los informes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.abrirCal">
+<span class="sig-name descname"><span class="pre">abrirCal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.abrirCal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.abrirCal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que muestra la ventana de calendario</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.resizeTablaArticulos">
+<span class="sig-name descname"><span class="pre">resizeTablaArticulos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.resizeTablaArticulos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.resizeTablaArticulos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que ajusta el tamaño de las columnas de la tbla artículos de la interfaz</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.resizeTablaCli">
+<span class="sig-name descname"><span class="pre">resizeTablaCli</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.resizeTablaCli"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.resizeTablaCli" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que ajusta el tamaño de las columnas de la tbla clientes de la interfaz</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.resizeTablaFacturas">
+<span class="sig-name descname"><span class="pre">resizeTablaFacturas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.resizeTablaFacturas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.resizeTablaFacturas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que ajusta el tamaño de las columnas de la tbla facturas de la interfaz</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="events.Eventos.resizeTablaVentas">
+<span class="sig-name descname"><span class="pre">resizeTablaVentas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/events.html#Eventos.resizeTablaVentas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#events.Eventos.resizeTablaVentas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que ajusta el tamaño de las columnas de la tbla ventas de la interfaz</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/src/events.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pepe 1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">events module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, pepe.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

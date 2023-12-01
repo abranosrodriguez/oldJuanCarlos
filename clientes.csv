@@ -1,0 +1,123 @@
+dni,alta,apellidos,nombre,direccion,provincia,municipio,sexo,pago,envio
+11111111H,20/10/2021,Abal Alonso,Daniel,Vigo,Almería,Albánchez,Hombre,Efectivo; Cargo Cuenta; Transferencia; Tarjeta,1
+53610914F,27/10/2021,Caballero,Yago,Aldan,Pontevedra,Cangas,Hombre,"Efectivo, Tarjeta",1
+44045042L,12/11/2021,Luz Santos,María,Aqui,Lugo,Becerreá,Mujer,Efectivo; Tarjeta,3
+24680297D,31/01/2022,Martinez Martinez,David,Casa Cordellas-12,Jaén,Jabalquinto,Hombre,Cargo Cuenta; Efectivo,1
+25225560B,08/09/2021,Garcia Garcia,Javier,"Doctor Fleming , 11",Barcelona,Barcelona,Hombre,Cargo Cuenta; Transferencia; Tarjeta,2
+00547093S,29/12/2021,Fernandez Fernandez,Jesus,"Bertrand I Serra , 11, 3R.",Zaragoza,Zaragoza,Hombre,Transferencia; Efectivo; Tarjeta,1
+69522927E,30/08/2021,Perez Perez,Jose Luis,"Carrió , 12, 5È A",A Coruña,"Baña, A",Hombre,Efectivo; Tarjeta,1
+63163249M,08/12/2021,Jimenez Jimenez,Angel,"Pirineus , 10",Zaragoza,Almonacid de la Sierra,Hombre,Tarjeta; Transferencia; Cargo Cuenta,1
+70249930H,16/12/2021,Gonzalez Ruiz,Daniel,"Jacint Verdaguer , 43",Toledo,Lillo,Hombre,Efectivo; Tarjeta,1
+09707468L,01/09/2021,Ruiz Saenz,Maria Angeles,"Nou , 9, 2N.",Teruel,Teruel,Mujer,Transferencia; Tarjeta,1
+56885768Y,19/02/2022,Lopez Gonzalez,Laura,"Jacint Verdaguer , 52, 3R, 1A.",Sevilla,Benacazón,Mujer,Efectivo,1
+03418360P,13/12/2021,Saenz Lopez,Ana Maria,"Joan Miró , 10",León,Ponferrada,Mujer,Cargo Cuenta; Tarjeta,3
+86084616D,04/02/2022,Rodriguez Gomez,Carmen,"Jaume Galobart , 12",Salamanca,Abusejo,Mujer,Cargo Cuenta; Tarjeta,1
+31938624L,18/12/2021,Gomez Rodriguez,Lucia,"Pintor Sert , 12, 1R., 1A.",Las Palmas,Tinajo,Mujer,Cargo Cuenta; Efectivo; Tarjeta,1
+86986824L,05/11/2021,Moreno Moreno,Sara,"Bellavista , 30",Valencia,Guadassuar,Mujer,Cargo Cuenta; Efectivo; Tarjeta,1
+47924877F,11/12/2021,Sanchez Pascual,Maria Jesus,"Jacint Verdaguer , 52, 2N., 4A.",Cádiz,Algodonales,Mujer,Tarjeta; Cargo Cuenta; Transferencia,1
+31727083D,03/12/2021,Alonso Hernandez,Ana,"Casa Nova , ",Cantabria,Ampuero,Mujer,Cargo Cuenta; Tarjeta,1
+34440222E,08/02/2022,Pascual Gil,Cristina,"De La Caça , 12, 1R., C",Badajoz,Badajoz,Mujer,Tarjeta; Cargo Cuenta,3
+32344443A,16/11/2021,Gil Diez,Raquel,"Pintor Sert , 12, 2N., 1A.",Soria,Soria,Mujer,Cargo Cuenta; Tarjeta,1
+55311947Y,02/02/2022,Marin Marin,Maria Luisa,"Casa Sara , ",La Rioja,Jalón de Cameros,Mujer,Efectivo; Tarjeta,1
+00342073V,24/07/2021,Diez Ezquerro,Maria Isabel,"Artès , 1, 1R, 1A.",Tarragona,Tarragona,Mujer,Cargo Cuenta; Tarjeta,1
+54361688S,11/9/2021,Alvarez Sanchez,Elena,"General Prim , 11, 2N.",Barcelona,"Ametlla del Vallès, L'",Mujer,Tarjeta,2
+40608543L,15/12/2021,Gutierrez Rubio,Isabel,"Cau De La Guineu , 4",Murcia,Villanueva del Río Segura,Mujer,Tarjeta; Transferencia,1
+61676974J,01/02/2022,Martin Calvo,Paula,"Joan Sanmartí , 12, 2N., 2A.",Tarragona,"Lloar, El",Mujer,Cargo Cuenta; Efectivo; Tarjeta,1
+92331882S,14/12/2021,Calvo Saez,Beatriz,"Prol. Padró , 1, 3R. 1A.",Granada,Albolote,Mujer,Tarjeta,2
+54129072K,03/12/2021,Blanco Ibañez,Rosa Maria,"Sallent , 22, 2N.",Zamora,Zamora,Mujer,Cargo Cuenta; Efectivo,1
+20792026A,13/12/2021,Ezquerro Blanco,Julia,"Joan Miró , 3",Asturias,Avilés,Mujer,Efectivo; Tarjeta,1
+79012671N,23/09/2021,Rubio Garrido,Pilar,"Lluís Castells , 12, 2N.",Huesca,Adahuesca,Mujer,Transferencia; Efectivo,1
+25547946Y,05/11/2021,Ibañez Gutierrez,Irene,"Sant Valentí , 12, 1R.",Cáceres,Cáceres,Mujer,Transferencia; Efectivo; Tarjeta,1
+28196095G,30/9/2021,Muñoz Alvarez,Maria Dolores,"Àngel Guimerà , 43, 2N",Cáceres,Trujillo,Mujer,Efectivo; Cargo Cuenta; Transferencia,3
+01031767X,05/11/2021,Garrido Muñoz,Susana,"Jaume Galobart , 11",Salamanca,Salamanca,Mujer,Transferencia; Cargo Cuenta; Efectivo; Tarjeta,1
+40027892A,06/09/2021,Saez Palacios,Andrea,"Avinguda Tres , 3, 1R., 1A.",Lleida,Alàs i Cerc,Mujer,Cargo Cuenta; Tarjeta,3
+33909795K,31/12/2021,Diaz Santamaria,Silvia,"Jacint Verdaguer , 52, 2N., 1A.",Madrid,Alameda del Valle,Mujer,Cargo Cuenta; Tarjeta,3
+43286287B,01/02/2022,Ramirez Benito,Angela,"Diputació , 10",Teruel,Teruel,Mujer,Tarjeta; Cargo Cuenta,2
+48120985V,06/08/2021,Palacios Ramirez,Alba,"Vic , 39, 1R., 2A.",Pontevedra,Cambados,Mujer,Efectivo; Tarjeta,1
+28278804M,30/09/2021,Ortega Ochoa,Alicia,"German Duran , 21",Navarra,Ezkurra,Mujer,Cargo Cuenta; Efectivo; Tarjeta,1
+82512761P,9/11/2021,Benito Diaz,Juan,"Bellavista , 30",Zaragoza,Caspe,Hombre,Tarjeta; Cargo Cuenta,1
+63801752M,06/08/2021,Santamaria Ortega,Ivan,"Nou , 7, 2N.",Zamora,Carbellino,Hombre,Cargo Cuenta; Tarjeta,2
+54508096M,09/12/2021,Romero Leon,Mario,"Manelic , 1",Ourense,San Amaro,Hombre,Cargo Cuenta; Tarjeta,1
+38206321D,01/10/2021,Ochoa Herce,Felix,"De La Pesca , 1, 1R., 1A.",Barcelona,Jorba,Hombre,Efectivo; Tarjeta,1
+84866681Q,05/02/2022,Leon Martin,Victor,"Pirineus , 34",Zamora,Benavente,Hombre,Transferencia; Cargo Cuenta; Efectivo; Tarjeta,1
+73615398B,03/12/2021,Dominguez Gabarri,Rafael,"Prol. Jacint Verdaguer , 1, 2N., 2A.",Vizcaya,Bilbao,Hombre,Transferencia; Cargo Cuenta; Efectivo,1
+X8136223L,30/11/2021,Herce Sainz,Enrique,"Mallorca , 11",Pontevedra,Vigo,Hombre,Efectivo; Tarjeta,1
+Z4205235N,20/02/2022,Peña Dominguez,Juan Jose,"Sant Benet , 12, 2N.",Ourense,Ourense,Hombre,Tarjeta; Cargo Cuenta,3
+Z8050649X,30/11/2021,Gabarri Merino,Jose Manuel,"Prol. Padró , 1, 2N., 2A.",Ourense,Avión,Hombre,Transferencia; Tarjeta; Efectivo; Cargo Cuenta,2
+Y7321987C,05/02/2022,Merino Romero,Marcos,"Artès , 1, 2N., 2A.",León,Urdiales del Páramo,Hombre,Cargo Cuenta; Tarjeta,1
+X6636955Y,08/12/2021,Torres Peña,Ricardo,"Joan Xxiii , 12, 1R, 2A.",Huelva,Higuera de la Sierra,Hombre,Transferencia; Tarjeta,3
+Y5025749X,01/12/2021,Sainz Cordon,Jose Ignacio,"Bertrand I Serra , 11, 3R.",Madrid,Madrid,Hombre,Transferencia; Cargo Cuenta; Efectivo,1
+Y0848528A,02/09/2021,Sanz Castillo,Ignacio,"La Sardana , 1",Zaragoza,Alfajarín,Hombre,Cargo Cuenta; Tarjeta,2
+Y4695857F,04/12/2021,Castillo Espinosa,Andres,"Galileu , 12",León,Ponferrada,Hombre,Tarjeta; Cargo Cuenta,3
+Y8901491E,04/09/2021,Ortiz Miguel,Gonzalo,"Sant Valentí , 11",Palencia,Bustillo del Páramo de Carrión,Hombre,Transferencia; Efectivo,1
+X7253999Y,23/09/2021,Cordon Muro,Julio,"Joan Xxiii , 43",Guipúzcoa,Irun,Hombre,Transferencia; Tarjeta,1
+70373620Z,14/10/2021,Arocas Pasadas,Estefania,"De La Pau , 1",Barcelona,Balenyà,Mujer,Tarjeta; Cargo Cuenta,1
+45444092W,20/10/2021,Viso Gilabert,Queralt,"Sant Antoni Maria Claret , 11",Salamanca,Campillo de Azaba,Mujer,Transferencia; Cargo Cuenta; Efectivo,1
+47126967J,02/09/2021,Ayala Ferreras,Joan,"Avenida Tres , 1, 3R., 1A.",Ceuta,Ceuta,Hombre,Cargo Cuenta; Tarjeta,1
+25149091V,13/12/2021,Baez Tejado,Joan,"Prol. Padró , 1, 2N., 1A.",Tarragona,Alcanar,Hombre,Tarjeta; Transferencia; Cargo Cuenta,2
+17871028M,05/01/2022,Bastardes Soto,Marc,"Sant Joan , 0, C, 3R. A",Barcelona,Alpens,Hombre,Transferencia; Tarjeta,1
+21866250N,02/12/2021,Anguera Vilafranca,Josep,"Prol. Jacint Verdaguer , 1, 1R., 1A.",Vizcaya,Gautegiz Arteaga,Hombre,Tarjeta; Cargo Cuenta; Efectivo,2
+74976579Y,04/02/2022,Pascual Aloy,Esther,"Joan Xxiii , 11, 1R., 1A.",Vizcaya,Erandio,Mujer,Tarjeta; Cargo Cuenta,1
+43547721G,09/12/2021,Vallés Girvent,Laura,"Lluís Castells , 12, 1R.",A Coruña,Brión,Mujer,Cargo Cuenta; Tarjeta,3
+44140778Y,08/09/2021,Raya Garcia,Raquel,"Padró , 83",Barcelona,Badalona,Mujer,Cargo Cuenta; Tarjeta,1
+50306194L,20/11/2021,Andreu Cruz,Joan,"Sant Iscle , 1",Zaragoza,Chiprana,Hombre,Tarjeta,2
+70049667Q,30/11/2021,Baraldés Comas,Maria Isabel,"Montserrat , 10",Tarragona,Albinyana,Mujer,Efectivo; Cargo Cuenta; Transferencia; Tarjeta,1
+25076596H,17/12/2021,Berengueras Cullerés,Adrià,"Prol. Jacint Verdaguer , 1, 1R., 2A.",Zaragoza,Aguilón,Hombre,Transferencia; Tarjeta; Cargo Cuenta,1
+18172824H,03/12/2021,López De Pablo Garcia Uceda,Gerard,"Trabucaires , 12",Zaragoza,Acered,Hombre,Cargo Cuenta; Tarjeta,2
+94719330V,01/12/2021,Arnau Moreno,Eliot,"Jacint Verdaguer , 49, 4T., 2A.",Zaragoza,Zaragoza,Hombre,Tarjeta; Cargo Cuenta,3
+68152579Z,05/10/2021,Raya Gavilan,Jordi,"Manelic , 1",Huesca,Ilche,Hombre,Cargo Cuenta; Efectivo; Tarjeta,1
+53257213T,30/09/2021,Zambudio Figuls,Lluís,"Verge De Fàtima , 6, Bx., 2A.",Madrid,Alameda del Valle,Hombre,Efectivo; Cargo Cuenta; Transferencia; Tarjeta,3
+89323483Q,29/11/2021,Bidault Cullerés,Laura,"Sant Joan , 0, D, 3R. A",Madrid,Madrid,Mujer,Efectivo; Tarjeta,1
+30305456N,09/11/2021,Biosca Fontanet,Jordi,"Galileu , 12",Ceuta,Ceuta,Hombre,Tarjeta; Efectivo,3
+51705658W,10/11/2021,Zafra Figuls,Dounya,"Esports , 12",Madrid,"Acebeda, La",Mujer,Transferencia; Tarjeta; Cargo Cuenta; Efectivo,3
+40432804T,16/12/2021,Aleu Icart,Julio,"Josep Boixaderas , 1",Barcelona,Aguilar de Segarra,Hombre,Cargo Cuenta; Tarjeta,2
+08530094S,04/11/2021,Badia Torné,Andreu,"Cervantes , 1, 1R.",Valencia,Ador,Hombre,Efectivo; Cargo Cuenta; Transferencia; Tarjeta,2
+46941904P,01/11/2021,Morales Gese,Ramon,"Cervantes , 9, 1R.",Lugo,Baleira,Hombre,Transferencia; Cargo Cuenta; Efectivo,1
+60044831L,22/12/2021,Blanco Fontanet,David-Jese,"Joan Xxiii , 39",Castellón,"Alcora, l'",Hombre,Efectivo; Tarjeta,1
+42806069X,30/10/2021,Alvarez Fernández,Aran,"Doctor Barnard , 10",Girona,Aiguaviva,Hombre,Efectivo; Cargo Cuenta; Tarjeta,3
+27926280W,28/10/2021,Garcia Almoguera,Gemma,"Esports , 12",Tarragona,Albinyana,Mujer,Efectivo; Cargo Cuenta; Transferencia; Tarjeta,1
+03025064N,11/02/2022,Libori Figueras,Ivan,"De La Pau , 8",Barcelona,Barcelona,Hombre,Cargo Cuenta; Tarjeta,1
+08272111T,29/10/2021,Bidault Pueyo,David,"Sant Valentí , 11",Valencia,Alginet,Hombre,Transferencia; Cargo Cuenta,1
+92793871A,10/12/2021,Benitez Jose,Xavier,"Prol. Padró , 1, 2N., 2A.",Lugo,Cospeito,Hombre,Transferencia; Tarjeta; Efectivo; Cargo Cuenta,1
+09403162A,11/02/2022,Pascual Flores,Mario,"Vic , 30 (Torroella)",Barcelona,Badalona,Hombre,Transferencia; Tarjeta; Cargo Cuenta; Efectivo,3
+04886981X,11/10/2021,Ayala Torné,Jesus,"Sant Iscle , 6",A Coruña,"Baña, A",Hombre,Tarjeta; Efectivo,2
+68631177M,03/02/2022,Listan Figueras,Gemma,"Jaume Balmes , 70, 3R, 1A.",Tarragona,Tarragona,Mujer,Transferencia; Efectivo; Tarjeta,1
+84183878Z,31/01/2022,Rasero Gavilan,Silvia,"German Duran , 27, 3R., 1A.",Girona,Girona,Mujer,Transferencia; Tarjeta; Cargo Cuenta; Efectivo,1
+19808463N,05/11/2021,Arnalot Puig,Albert,"Sant Joan , 11",Zaragoza,Caspe,Hombre,Cargo Cuenta; Tarjeta,3
+76889680J,03/01/2022,Moliner Garrido,Maria,"Puig , 1",Cádiz,Jerez de la Frontera,Mujer,Transferencia; Efectivo; Tarjeta,1
+Y3532269N,16/02/2022,López Garrigassait,Berta,"Ramon I Cajal , 81, 2N.",Valencia,Valencia,Mujer,Efectivo; Tarjeta,1
+X6691969G,04/09/2021,Sánchez Gómez,Mireia,"Moragues , 10",Lleida,"Alamús, Els",Mujer,Cargo Cuenta; Tarjeta,3
+Z2599796L,12/11/2021,Alavedra Sunyé,Gemma,"Prol. Padró , 1, 3R., 2A.",Girona,Albons,Mujer,Tarjeta; Efectivo; Transferencia,2
+Z9409720B,30/10/2021,Aligué Bonvehí,Maria Isabel,"Francesc De Vitòria , 11, 4T 2A",Barcelona,Aiguafreda,Mujer,Transferencia; Cargo Cuenta,2
+X8844479J,07/01/2022,Mas Franch,Toni,"Albéniz , 22, 2N.",Valencia,Jalance,Hombre,Efectivo; Tarjeta,1
+Y6800388S,10/12/2021,Aloy Compte,Alejandro,"Tres Roures , 10, 4T 2A",Guipúzcoa,Orendain,Hombre,Transferencia; Cargo Cuenta; Tarjeta,3
+X7990513Z,01/12/2021,Asensio Vega,Joan Martí,"Prol. Padró , 1, 2N., 1A.",Asturias,Santa Eulalia de Oscos,Hombre,Transferencia; Tarjeta,3
+Y5696509K,09/12/2021,Bidault Pérez,Ingrid,"Albéniz , 13, 2N., 1A.",Girona,Girona,Mujer,Tarjeta; Cargo Cuenta,2
+X5901688A,1/12/2021,Aloy Codinachs,Oliver,"Font Del Gat , 1",Zaragoza,Zaragoza,Hombre,Transferencia; Tarjeta; Cargo Cuenta,3
+Y0750566K,12/11/2021,Altimiras Armenteros,Sandra,"Montcau , 1",Lleida,Abella de la Conca,Mujer,Transferencia; Cargo Cuenta,1
+Z9509455H,06/11/2021,Belmonte Sánchez,Jordi,"Monturiol , 1",Ourense,Baños de Molgas,Hombre,Efectivo; Cargo Cuenta; Transferencia; Tarjeta,3
+X3515208A,09/12/2021,Bajona Garcia,Marc,"Vilatorrada , 6",Cuenca,"Acebrón, El",Hombre,Transferencia; Cargo Cuenta; Tarjeta,1
+Y0075870F,17/11/2021,Aguilar Rodriguez,Jordina,"Jaume Galobart , 11",Valencia,Ademuz,Mujer,Cargo Cuenta; Tarjeta,1
+Y4074883X,30/10/2021,Barriga Soto,Maria José,"Sant Genís , 25",Soria,Ágreda,Mujer,Tarjeta; Efectivo,2
+Z7925019Y,02/09/2021,Avila Masjuan,Raquel,"Verge De Fàtima , 2, 3R., 1A.",Pontevedra,Moaña,Mujer,Cargo Cuenta; Tarjeta,1
+76971982K,04/08/2021,Parramon Flores,Enric,"Jaume I , 10",Las Palmas,Tuineje,Hombre,Cargo Cuenta; Tarjeta,1
+90330711M,02/12/2021,Aguilar Ramos,Marta,"Sant Joan , 0, C, 1R., B",Zaragoza,Aguilón,Mujer,Transferencia; Efectivo,1
+69864108K,14/12/2021,Ayala Alsina,Carla,"Jacint Verdaguer , 13",Girona,Amer,Mujer,Transferencia; Cargo Cuenta; Efectivo; Tarjeta,2
+30886503X,04/12/2021,Alvarez Troyano,Maria Noelia,"Sant Benet , 28, 2N., 2A.",Zaragoza,Acered,Mujer,Cargo Cuenta; Tarjeta,1
+81821447M,02/11/2021,Alins González,Cristina,"Foneria , 12",Ávila,Padiernos,Mujer,Tarjeta; Efectivo,2
+88582898P,01/09/2021,Algué Trancho,David,"Jaume I , 10",Zaragoza,Zaragoza,Hombre,Cargo Cuenta; Tarjeta,2
+48564066A,05/11/2021,Badia Castillo,Cristian,"De La Pesca , 1, 1R., 2A.",Valencia,Ademuz,Hombre,Cargo Cuenta; Tarjeta,1
+23991336J,29/09/2021,Benitez Flores,Julio Alberto,"Pirineus , 22",A Coruña,Dodro,Hombre,Cargo Cuenta; Tarjeta,2
+46680680H,10/11/2021,Alberich Rodriguez,Aleix,"Jaume Galobart , 14",Girona,Agullana,Hombre,Tarjeta; Transferencia,1
+03947383P,03/12/2021,Armencot Puig,Verònica,"Sant Joan, Edifici D , 3R A",Palencia,Ledigos,Mujer,Tarjeta; Cargo Cuenta,3
+17203905C,04/09/2021,Aligué Rivera,Mariona,"Vic , 119, 3R., 2A.",Jaén,Escañuela,Mujer,Transferencia; Cargo Cuenta,2
+12369421K,05/09/2021,Barriga Riu,Marc,"Carles Buïgas , 10, 1R., 1A.",Valencia,Aielo de Rugat,Hombre,Cargo Cuenta; Tarjeta,1
+08897901Y,05/09/2021,Portella Gispets,Gemma,"Jaume Balmes , 67, 2N.",Barcelona,Barcelona,Mujer,Cargo Cuenta; Tarjeta,3
+22180704X,6/11/2021,Aguilera Baena,Ricardo,"Prol. Padró , 1, 3R., 2A.",Madrid,Leganés,Hombre,Efectivo; Cargo Cuenta; Tarjeta,1
+57858203R,27/10/2021,Rodriguez García,Juan,"De La Caça , 12, 2N., C",Ourense,Oímbra,Hombre,Transferencia; Cargo Cuenta; Tarjeta,1
+46748211K,09/12/2021,Aguilar Sunyé,Marta,"Vic , 119, 2N., 1A.",Tarragona,Aiguamúrcia,Mujer,Tarjeta,1
+41732568B,31/12/2021,Barriga Tardà,Natàlia,"Moragues , 1",Valencia,Valencia,Mujer,Transferencia; Tarjeta,1
+04772601D,08/12/2021,Barcons Lara,MARTA,"Trabucaires , 12",Valencia,Agullent,Mujer,Transferencia,1
+22222222J,10/12/2021,Asdf,Asdf,Asdf,Alicante,Altea,Mujer,Cargo Cuenta; Efectivo,2
+Z0462672D,02/12/2021,Castro López,Ángel,"Avda. Principal, 12",Pontevedra,Vigo,Hombre,Tarjeta; Cargo Cuenta,2
+Y2753379V,15/12/2021,Castro Abal,Julio,"Avda. Urzaiz, 12 3º I",Pontevedra,Vigo,Hombre,Cargo Cuenta; Tarjeta,3

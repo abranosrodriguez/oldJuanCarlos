@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>products module &#8212; pepe 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pepe 1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">products module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-products">
+<span id="products-module"></span><h1>products module<a class="headerlink" href="#module-products" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="products.Productos">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">products.</span></span><span class="sig-name descname"><span class="pre">Productos</span></span><a class="reference internal" href="../_modules/products.html#Productos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#products.Productos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="products.Productos.bajaProd">
+<span class="sig-name descname"><span class="pre">bajaProd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/products.html#Productos.bajaProd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#products.Productos.bajaProd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que dado el nombre de un producto, lo manda a bajaProd en conexion para eliminarlo y
+después, llama a cargarTabProd para recargar la tabla productos de la interfaz</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="products.Productos.buscarProd">
+<span class="sig-name descname"><span class="pre">buscarProd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/products.html#Productos.buscarProd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#products.Productos.buscarProd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método dado el nombre de un producto, carga sus datos en la tabla productos de la interfaz</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="products.Productos.cargaProd">
+<span class="sig-name descname"><span class="pre">cargaProd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/products.html#Productos.cargaProd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#products.Productos.cargaProd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Módulo que carga los datos de un producto en la parte superior de la interfaz al hacer click en un
+producto de la tabla productos de la interfaz</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="products.Productos.guardaProd">
+<span class="sig-name descname"><span class="pre">guardaProd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/products.html#Productos.guardaProd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#products.Productos.guardaProd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que recoge los valores de los campos de producto y se los manda al método altaProd en conexion
+para crear un nuevo producto en la BD. Luego, llama al método cargarTabProd para recargar la tabla productos
+en la interfaz.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="products.Productos.limpiaFormProd">
+<span class="sig-name descname"><span class="pre">limpiaFormProd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/products.html#Productos.limpiaFormProd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#products.Productos.limpiaFormProd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que en blanco los campos de producto en la interfaz.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="products.Productos.modifProd">
+<span class="sig-name descname"><span class="pre">modifProd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/products.html#Productos.modifProd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#products.Productos.modifProd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Módulo que recoge los datos de un producto y los manda a cargarTabProd en conexion para actualizar
+sus valores. A continuación llama a cargarTabProd para recargar la tabla productos de la interfaz</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/src/products.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pepe 1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">products module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, pepe.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

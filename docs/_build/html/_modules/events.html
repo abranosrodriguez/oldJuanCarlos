@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>events &#8212; pepe 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pepe 1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">events</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for events</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Fichero de eventos generales</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">var</span><span class="o">,</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">xlrd</span>
+
+<span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QMessageBox</span>
+<span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtPrintSupport</span><span class="p">,</span> <span class="n">QtSql</span>
+
+<span class="kn">import</span> <span class="nn">conexion</span>
+<span class="kn">import</span> <span class="nn">facturas</span>
+<span class="kn">from</span> <span class="nn">ventana</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
+
+
+<div class="viewcode-block" id="Eventos"><a class="viewcode-back" href="../src/events.html#events.Eventos">[docs]</a><span class="k">class</span> <span class="nc">Eventos</span><span class="p">():</span>
+<div class="viewcode-block" id="Eventos.Salida"><a class="viewcode-back" href="../src/events.html#events.Eventos.Salida">[docs]</a>    <span class="k">def</span> <span class="nf">Salida</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que muestra la ventana para salir del programa y en función de lo que se quiera hacer,</span>
+<span class="sd">        cierra la aplicación o esconde la ventana de salir.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">var</span><span class="o">.</span><span class="n">dlgaviso</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">dlgaviso</span><span class="o">.</span><span class="n">exec</span><span class="p">():</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">var</span><span class="o">.</span><span class="n">dlgaviso</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error en módulo salir &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.abrirCal"><a class="viewcode-back" href="../src/events.html#events.Eventos.abrirCal">[docs]</a>    <span class="k">def</span> <span class="nf">abrirCal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que muestra la ventana de calendario</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">var</span><span class="o">.</span><span class="n">dlgCalendar</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error al abrir el calendario &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Eventos.resizeTablaCli"><a class="viewcode-back" href="../src/events.html#events.Eventos.resizeTablaCli">[docs]</a>    <span class="k">def</span> <span class="nf">resizeTablaCli</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que ajusta el tamaño de las columnas de la tbla clientes de la interfaz</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tabCliente</span><span class="o">.</span><span class="n">horizontalHeader</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+                <span class="n">header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="n">header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeToContents</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error al redimensionar la tabla de clientes &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.resizeTablaFacturas"><a class="viewcode-back" href="../src/events.html#events.Eventos.resizeTablaFacturas">[docs]</a>    <span class="k">def</span> <span class="nf">resizeTablaFacturas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que ajusta el tamaño de las columnas de la tbla facturas de la interfaz</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tabFacturas</span><span class="o">.</span><span class="n">horizontalHeader</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                <span class="n">header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                    <span class="n">header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeToContents</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error al redimensionar la tabla de facturas&#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.resizeTablaArticulos"><a class="viewcode-back" href="../src/events.html#events.Eventos.resizeTablaArticulos">[docs]</a>    <span class="k">def</span> <span class="nf">resizeTablaArticulos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que ajusta el tamaño de las columnas de la tbla artículos de la interfaz</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tabProd</span><span class="o">.</span><span class="n">horizontalHeader</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                <span class="n">header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                    <span class="n">header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeToContents</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error al redimensionar la tabla de artículos &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.resizeTablaVentas"><a class="viewcode-back" href="../src/events.html#events.Eventos.resizeTablaVentas">[docs]</a>    <span class="k">def</span> <span class="nf">resizeTablaVentas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que ajusta el tamaño de las columnas de la tbla ventas de la interfaz</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tabVentas</span><span class="o">.</span><span class="n">horizontalHeader</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+                <span class="n">header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="n">header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeToContents</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error al redimensionar la tabla de ventas &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.Abrir"><a class="viewcode-back" href="../src/events.html#events.Eventos.Abrir">[docs]</a>    <span class="k">def</span> <span class="nf">Abrir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que abre la ventana del explorador de archivos.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">var</span><span class="o">.</span><span class="n">dlgabrir</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error al abrir cuadro diálogo &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.Backup"><a class="viewcode-back" href="../src/events.html#events.Eventos.Backup">[docs]</a>    <span class="k">def</span> <span class="nf">Backup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que realiza una copia de seguridad de la BD en formato zip</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+            <span class="n">fecha</span> <span class="o">=</span> <span class="n">fecha</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y.%m.</span><span class="si">%d</span><span class="s1">.%H.%M.%S&#39;</span><span class="p">)</span>
+            <span class="n">var</span><span class="o">.</span><span class="n">copia</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fecha</span> <span class="o">+</span> <span class="s1">&#39;_backup.zip&#39;</span><span class="p">))</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QFileDialog</span><span class="o">.</span><span class="n">Options</span><span class="p">()</span>
+            <span class="n">directorio</span><span class="p">,</span> <span class="n">filename</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">dlgabrir</span><span class="o">.</span><span class="n">getSaveFileName</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;Guardar Copia&#39;</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">copia</span><span class="p">,</span> <span class="s1">&#39;.zip&#39;</span><span class="p">,</span>
+                                                                <span class="n">options</span><span class="o">=</span><span class="n">option</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">dlgabrir</span><span class="o">.</span><span class="n">Accepted</span> <span class="ow">and</span> <span class="n">filename</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">fichzip</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">copia</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+                <span class="n">fichzip</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">filedb</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">filedb</span><span class="p">),</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZIP_DEFLATED</span><span class="p">)</span>
+                <span class="n">fichzip</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+                <span class="n">msgBox</span> <span class="o">=</span> <span class="n">QMessageBox</span><span class="p">()</span>
+                <span class="n">msgBox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Information</span><span class="p">)</span>
+                <span class="n">msgBox</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>  <span class="c1"># no hace nada</span>
+                <span class="n">msgBox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Aviso Backup&#39;</span><span class="p">)</span>
+                <span class="n">msgBox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Copia de seguridad creada&quot;</span><span class="p">)</span>
+                <span class="n">msgBox</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+
+                <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">copia</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">directorio</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error al hacer backup &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.Restaurar"><a class="viewcode-back" href="../src/events.html#events.Eventos.Restaurar">[docs]</a>    <span class="k">def</span> <span class="nf">Restaurar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que restaura la BD a partir de una copia de seguridad en formato zip</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">dirpro</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">dirpro</span><span class="p">)</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QFileDialog</span><span class="o">.</span><span class="n">Options</span><span class="p">()</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">dlgabrir</span><span class="o">.</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;Restaurar Copia de Seguridad&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;*.zip;;All &#39;</span><span class="p">,</span>
+                                                    <span class="n">options</span><span class="o">=</span><span class="n">option</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">dlgabrir</span><span class="o">.</span><span class="n">Accepted</span> <span class="ow">and</span> <span class="n">filename</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                <span class="n">file</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pepe</span><span class="p">:</span>
+                    <span class="n">pepe</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+                <span class="n">pepe</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="c1"># shutil.move(&#39;pepe.sqlite&#39;, str(dirpro))</span>
+            <span class="n">conexion</span><span class="o">.</span><span class="n">Conexion</span><span class="o">.</span><span class="n">db_connect</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">filedb</span><span class="p">)</span>
+            <span class="n">conexion</span><span class="o">.</span><span class="n">Conexion</span><span class="o">.</span><span class="n">cargarTabCli</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error al restaurar la base de datos &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.Imprimir"><a class="viewcode-back" href="../src/events.html#events.Eventos.Imprimir">[docs]</a>    <span class="k">def</span> <span class="nf">Imprimir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que abre la ventana de impresión para conectarte con impresoras</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">printDialog</span> <span class="o">=</span> <span class="n">QtPrintSupport</span><span class="o">.</span><span class="n">QPrintDialog</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">printDialog</span><span class="o">.</span><span class="n">exec_</span><span class="p">():</span>
+                <span class="n">printDialog</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error al imprimir &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.ImportarDatos"><a class="viewcode-back" href="../src/events.html#events.Eventos.ImportarDatos">[docs]</a>    <span class="k">def</span> <span class="nf">ImportarDatos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que actualiza/crea clientes a partir de un fichero excel y llama al método cargarTabCli</span>
+<span class="sd">        para que recarge la tabla clientes de la interfaz</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">dirpro</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">dirpro</span><span class="p">)</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QFileDialog</span><span class="o">.</span><span class="n">Options</span><span class="p">()</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">dlgabrir</span><span class="o">.</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;Cargar datos desde Excel&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;*.xls;;All &#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">option</span><span class="p">)</span>
+
+            <span class="n">documento</span> <span class="o">=</span> <span class="n">xlrd</span><span class="o">.</span><span class="n">open_workbook</span><span class="p">(</span><span class="n">filename</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">clientes</span> <span class="o">=</span> <span class="n">documento</span><span class="o">.</span><span class="n">sheet_by_index</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">filas_clientes</span> <span class="o">=</span> <span class="n">clientes</span><span class="o">.</span><span class="n">nrows</span>
+            <span class="n">columnas_clientes</span> <span class="o">=</span> <span class="n">clientes</span><span class="o">.</span><span class="n">ncols</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Filas: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">filas_clientes</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. Columnas: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">columnas_clientes</span><span class="p">))</span>
+
+            <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">dlgabrir</span><span class="o">.</span><span class="n">Accepted</span> <span class="ow">and</span> <span class="n">filename</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
+                <span class="n">msg</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Confirmar&#39;</span><span class="p">)</span>
+                <span class="n">msg</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Information</span><span class="p">)</span>
+                <span class="n">msg</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;¿Estás seguro de seleccionar este archivo?&#39;</span><span class="p">)</span>
+                <span class="n">msg</span><span class="o">.</span><span class="n">setStandardButtons</span><span class="p">(</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Ok</span> <span class="o">|</span> <span class="n">QMessageBox</span><span class="o">.</span><span class="n">Cancel</span><span class="p">)</span>
+                <span class="n">msg</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">msg</span><span class="o">.</span><span class="n">clickedButton</span><span class="p">()</span> <span class="o">==</span> <span class="n">msg</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">StandardButton</span><span class="o">.</span><span class="n">Ok</span><span class="p">):</span>
+                    <span class="n">dnis</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
+                    <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s1">&#39;select dni from clientes&#39;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">exec_</span><span class="p">():</span>
+                        <span class="k">while</span> <span class="n">query</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
+                            <span class="n">dnis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">clientes</span><span class="o">.</span><span class="n">nrows</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                        <span class="n">c1</span> <span class="o">=</span> <span class="n">clientes</span><span class="o">.</span><span class="n">cell_value</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="n">c2</span> <span class="o">=</span> <span class="n">clientes</span><span class="o">.</span><span class="n">cell_value</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                        <span class="n">c3</span> <span class="o">=</span> <span class="n">clientes</span><span class="o">.</span><span class="n">cell_value</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+                        <span class="n">c4</span> <span class="o">=</span> <span class="n">clientes</span><span class="o">.</span><span class="n">cell_value</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+                        <span class="n">c5</span> <span class="o">=</span> <span class="n">clientes</span><span class="o">.</span><span class="n">cell_value</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+                        <span class="n">c6</span> <span class="o">=</span> <span class="n">clientes</span><span class="o">.</span><span class="n">cell_value</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+                        <span class="k">if</span> <span class="n">c1</span> <span class="ow">in</span> <span class="n">dnis</span><span class="p">:</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s1">&#39;update clientes set apellidos = :apellidos, nombre = :nombre, &#39;</span>
+                                          <span class="s1">&#39;direccion = :direccion, provincia = :provincia, sexo = :sexo &#39;</span>
+                                          <span class="s1">&#39;where dni = :dni&#39;</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:dni&#39;</span><span class="p">,</span> <span class="n">c1</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:apellidos&#39;</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:nombre&#39;</span><span class="p">,</span> <span class="n">c3</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:direccion&#39;</span><span class="p">,</span> <span class="n">c4</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:provincia&#39;</span><span class="p">,</span> <span class="n">c5</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:sexo&#39;</span><span class="p">,</span> <span class="n">c6</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span>
+                                <span class="s1">&#39;insert into clientes (dni, apellidos, nombre, direccion, provincia, sexo)&#39;</span>
+                                <span class="s1">&#39;VALUES (:dni, :apellidos, :nombre, :direccion,:provincia, :sexo)&#39;</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:dni&#39;</span><span class="p">,</span> <span class="n">c1</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:apellidos&#39;</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:nombre&#39;</span><span class="p">,</span> <span class="n">c3</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:direccion&#39;</span><span class="p">,</span> <span class="n">c4</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:provincia&#39;</span><span class="p">,</span> <span class="n">c5</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:sexo&#39;</span><span class="p">,</span> <span class="n">c6</span><span class="p">)</span>
+                            <span class="n">query</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+                    <span class="n">conexion</span><span class="o">.</span><span class="n">Conexion</span><span class="o">.</span><span class="n">cargarTabCli</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">msg</span><span class="o">.</span><span class="n">clickedButton</span><span class="p">()</span> <span class="o">==</span> <span class="n">msg</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">StandardButton</span><span class="o">.</span><span class="n">Cancel</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Importación cancelada&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error al cargar datos del excel &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.ExportarDatos"><a class="viewcode-back" href="../src/events.html#events.Eventos.ExportarDatos">[docs]</a>    <span class="k">def</span> <span class="nf">ExportarDatos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que crea un fichero excel con los datos de todos los clientes</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">conexion</span><span class="o">.</span><span class="n">Conexion</span><span class="o">.</span><span class="n">exportExcel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">msgBox</span> <span class="o">=</span> <span class="n">QMessageBox</span><span class="p">()</span>
+                <span class="n">msgBox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Information</span><span class="p">)</span>
+                <span class="n">msgBox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Datos exportados con éxito.&quot;</span><span class="p">)</span>
+                <span class="n">msgBox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Operación completada&quot;</span><span class="p">)</span>
+                <span class="n">msgBox</span><span class="o">.</span><span class="n">setStandardButtons</span><span class="p">(</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Ok</span><span class="p">)</span>
+                <span class="n">msgBox</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error en mensaje generado exportar datos &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error en evento exportar datos &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.Autor"><a class="viewcode-back" href="../src/events.html#events.Eventos.Autor">[docs]</a>    <span class="k">def</span> <span class="nf">Autor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que establece un autor para los informes</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">msgBox</span> <span class="o">=</span> <span class="n">QMessageBox</span><span class="p">()</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Information</span><span class="p">)</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Ares Punzón García&quot;</span>
+                           <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Nacido el 17/07/2000&quot;</span><span class="p">)</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Datos del autor&quot;</span><span class="p">)</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error en la ventana Autor &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.Contacto"><a class="viewcode-back" href="../src/events.html#events.Eventos.Contacto">[docs]</a>    <span class="k">def</span> <span class="nf">Contacto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que establece un contacto para los informes</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">msgBox</span> <span class="o">=</span> <span class="n">QMessageBox</span><span class="p">()</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Information</span><span class="p">)</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Correo: arespg@gmail.com&quot;</span>
+                           <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Teléfono: +34 608 188 870&quot;</span><span class="p">)</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Datos de contacto&quot;</span><span class="p">)</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error en la ventana Autor &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Eventos.Version"><a class="viewcode-back" href="../src/events.html#events.Eventos.Version">[docs]</a>    <span class="k">def</span> <span class="nf">Version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Método que establece una versión del programa para los informes</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">msgBox</span> <span class="o">=</span> <span class="n">QMessageBox</span><span class="p">()</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Information</span><span class="p">)</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Programa todavía en fase Beta&quot;</span>
+                           <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Versión: 0.7.4&quot;</span><span class="p">)</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Datos del autor&quot;</span><span class="p">)</span>
+            <span class="n">msgBox</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error en la ventana Autor &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pepe 1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">events</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, pepe.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

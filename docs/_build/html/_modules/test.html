@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test &#8212; pepe 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pepe 1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">test</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for test</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">unittest</span>
+
+<span class="kn">import</span> <span class="nn">clients</span><span class="o">,</span> <span class="nn">conexion</span><span class="o">,</span> <span class="nn">var</span>
+<span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtSql</span>
+
+<div class="viewcode-block" id="MyTestCase"><a class="viewcode-back" href="../src/test.html#test.MyTestCase">[docs]</a><span class="k">class</span> <span class="nc">MyTestCase</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MyTestCase.test_dni"><a class="viewcode-back" href="../src/test.html#test.MyTestCase.test_dni">[docs]</a>    <span class="k">def</span> <span class="nf">test_dni</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">dni</span> <span class="o">=</span> <span class="s1">&#39;53973945Y&#39;</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">clients</span><span class="o">.</span><span class="n">Clientes</span><span class="o">.</span><span class="n">validarDNI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">dni</span><span class="p">))</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Proba Errónea&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MyTestCase.test_conexion"><a class="viewcode-back" href="../src/test.html#test.MyTestCase.test_conexion">[docs]</a>    <span class="k">def</span> <span class="nf">test_conexion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">conexion</span><span class="o">.</span><span class="n">Conexion</span><span class="o">.</span><span class="n">db_connect</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">filedb</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Conexión no válida&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MyTestCase.test_fac"><a class="viewcode-back" href="../src/test.html#test.MyTestCase.test_fac">[docs]</a>    <span class="k">def</span> <span class="nf">test_fac</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">valor</span> <span class="o">=</span> <span class="mf">53.12</span>
+        <span class="n">codfac</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Cálculos incorrectos&#39;</span>
+            <span class="n">var</span><span class="o">.</span><span class="n">subfac</span> <span class="o">=</span> <span class="mf">0.00</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
+            <span class="n">query1</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
+            <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s1">&#39;select codventa, codprod, cantidad  from ventas where codfac = :codfac&#39;</span><span class="p">)</span>
+            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:codfac&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">codfac</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">exec_</span><span class="p">():</span>
+                <span class="k">while</span> <span class="n">query</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
+                    <span class="n">codarticventa</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="n">cantidad</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+                    <span class="n">query1</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s1">&#39;select nombre, precio from productos where codigo = :codarticventa&#39;</span><span class="p">)</span>
+                    <span class="n">query1</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:codarticventa&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">codarticventa</span><span class="p">))</span>
+                    <span class="k">if</span> <span class="n">query1</span><span class="o">.</span><span class="n">exec_</span><span class="p">():</span>
+                        <span class="k">while</span> <span class="n">query1</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
+                            <span class="n">precio</span> <span class="o">=</span> <span class="n">query1</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                            <span class="n">subtotal</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">cantidad</span><span class="p">)</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">precio</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+                        <span class="n">var</span><span class="o">.</span><span class="n">subfac</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">subtotal</span><span class="p">)</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">subfac</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+                    <span class="n">var</span><span class="o">.</span><span class="n">iva</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">subfac</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.21</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+                    <span class="n">var</span><span class="o">.</span><span class="n">fac</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">iva</span><span class="p">)</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">subfac</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error Listado de la tabla ventas: </span><span class="si">%s</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">valor</span><span class="p">),</span><span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">fac</span><span class="p">),</span><span class="mi">2</span><span class="p">),</span><span class="n">msg</span><span class="p">)</span></div></div>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pepe 1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">test</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, pepe.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>ojo.png</file>
+  </qresource>
+</RCC>

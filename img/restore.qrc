@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>backup_restore.png</file>
+  </qresource>
+</RCC>
